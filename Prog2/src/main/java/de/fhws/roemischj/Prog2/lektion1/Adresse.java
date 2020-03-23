@@ -10,7 +10,7 @@ public class Adresse {
 		if(strasse.charAt(0)>= 'A' && strasse.charAt(0) <= 'Z')
 			this.strasse = strasse;
 		else
-			throw new RuntimeException("StraÃŸe muss mit GroÃŸbuchstabe beginnen");
+			throw new RuntimeException("Strasse muss mit Grossbuchstabe beginnen");
 	
 		if(hausnummer.charAt(0) >= '0' && hausnummer.charAt(0) <= '9')
 			this.hausnummer = hausnummer;
@@ -22,6 +22,6 @@ public class Adresse {
 		if(ort.charAt(0)>= 'A' && ort.charAt(0) <= 'Z')
 			this.ort = ort;
 		else
-			throw new RuntimeException("Ort muss mit GroÃŸbuchstabe beginnen");
+			throw new RuntimeException("Ort muss mit Grossbuchstabe beginnen");
 	}
 }

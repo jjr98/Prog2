@@ -12,7 +12,7 @@ public class Person {
 			this.adresse = new Adresse(strasse, hausnummer, postleitzahl, ort);
 		}
 		else {
-			throw new RuntimeException("Vorname muss mit GroÃŸbuchstabe beginnen");
+			throw new RuntimeException("Vorname muss mit Grossbuchstabe beginnen");
 		}
 		
 	}

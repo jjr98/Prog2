@@ -21,7 +21,7 @@ class PunktTest {
 			p.verschiebePunkt(2000, 0);
 			fail("RuntimeException expected");
 		} catch (Exception e) {
-			assertEquals("UngÃ¼ltige x-Koordinate", e.getMessage());
+			assertEquals("Ungueltige x-Koordinate", e.getMessage());
 		}
 	}
 	
@@ -32,7 +32,7 @@ class PunktTest {
 			p.verschiebePunkt(0, 1300);
 			fail("RuntimeException expected");
 		} catch (Exception e) {
-			assertEquals("UngÃ¼ltige y-Koordinate", e.getMessage());
+			assertEquals("Ungueltige y-Koordinate", e.getMessage());
 		}
 	}
 	
@@ -43,14 +43,14 @@ class PunktTest {
 			p.verschiebePunkt(-10, 0);
 			fail("RuntimeException expected");
 		} catch (Exception e) {
-			assertEquals("Koordinaten dÃ¼rfen nicht negativ sein", e.getMessage());
+			assertEquals("Koordinaten duerfen nicht negativ sein", e.getMessage());
 		}
 		
 		try {
 			p.verschiebePunkt(0, -10);
 			fail("RuntimeException expected");
 		} catch (Exception e) {
-			assertEquals("Koordinaten dÃ¼rfen nicht negativ sein", e.getMessage());
+			assertEquals("Koordinaten duerfen nicht negativ sein", e.getMessage());
 		}
 	}
 }

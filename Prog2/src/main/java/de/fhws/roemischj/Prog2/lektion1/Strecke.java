@@ -6,7 +6,7 @@ public class Strecke {
 	
 	public Strecke(int punkt1, int punkt2) {
 		if(punkt1 < 0 || punkt2 < 0)
-			throw new RuntimeException("Punkte mÃ¼ssen positiv sein");
+			throw new RuntimeException("Punkte muessen positiv sein");
 		else if(punkt1 < punkt2) {
 			this.a = punkt1;
 			this.b = punkt2;
