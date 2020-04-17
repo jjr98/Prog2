@@ -1,8 +1,10 @@
-package de.fhws.roemischj.Prog2.lektion1;
+package de.fhws.roemischj.Prog2.lektion14;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import de.fhws.roemischj.Prog2.lektion14.Strecke;
 
 class StreckeTest {
 

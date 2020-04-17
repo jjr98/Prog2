@@ -1,4 +1,4 @@
-package de.fhws.roemischj.Prog2.lektion2.uebung1;
+package de.fhws.roemischj.Prog2.lektion15.uebung1;
 
 import java.util.*;
 

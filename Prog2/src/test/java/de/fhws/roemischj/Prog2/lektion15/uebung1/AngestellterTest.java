@@ -1,11 +1,11 @@
-package de.fhws.roemischj.Prog2.lektion2.uebung1;
+package de.fhws.roemischj.Prog2.lektion15.uebung1;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import de.fhws.roemischj.Prog2.lektion2.uebung1.Abteilungsleiter;
-import de.fhws.roemischj.Prog2.lektion2.uebung1.Angestellter;
+import de.fhws.roemischj.Prog2.lektion15.uebung1.Abteilungsleiter;
+import de.fhws.roemischj.Prog2.lektion15.uebung1.Angestellter;
 
 import java.util.*;
 

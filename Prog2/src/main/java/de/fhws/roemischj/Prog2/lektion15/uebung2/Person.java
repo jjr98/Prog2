@@ -1,4 +1,4 @@
-package de.fhws.roemischj.Prog2.lektion2.uebung2;
+package de.fhws.roemischj.Prog2.lektion15.uebung2;
 
 public abstract class Person {
 

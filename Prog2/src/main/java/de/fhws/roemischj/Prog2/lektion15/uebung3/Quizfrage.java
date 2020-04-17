@@ -1,4 +1,4 @@
-package de.fhws.roemischj.Prog2.lektion2.uebung3;
+package de.fhws.roemischj.Prog2.lektion15.uebung3;
 
 public abstract class Quizfrage {
 	String frage;

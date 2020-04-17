@@ -1,4 +1,4 @@
-package de.fhws.roemischj.Prog2.lektion1;
+package de.fhws.roemischj.Prog2.lektion14;
 
 public class Kugelvolumen
 	{
