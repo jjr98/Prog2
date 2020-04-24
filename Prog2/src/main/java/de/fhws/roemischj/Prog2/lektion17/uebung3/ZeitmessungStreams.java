@@ -45,17 +45,15 @@ public class ZeitmessungStreams {
 	}
 	
 	public static void unbufferedCopyFile(InputStream fis, OutputStream fos) {
-		do {
-			try
-			{
-				copy(fis, fos);
-				break;
-			}
-			catch(IOException io) {
-				io.printStackTrace();
-				continue;
-			}
-		}while(true);
+		try
+		{
+			copy(fis, fos);
+			fis.close();
+			fos.close();
+		}
+		catch(IOException io) {
+			io.printStackTrace();
+		}
 	}
 	
 	public static float messeZeitDifferenz(int anzahlTests) {
@@ -69,7 +67,7 @@ public class ZeitmessungStreams {
 			FileOutputStream fos;
 			try {
 				fis = new FileInputStream(source);
-			} catch (FileNotFoundException e1) {
+			} catch (FileNotFoundException e) {
 				System.out.println("Quelldatei nicht gefunden");
 				return (Long) null;
 			}
@@ -83,6 +81,20 @@ public class ZeitmessungStreams {
 			ZeitmessungStreams.unbufferedCopyFile(fis, fos);
 			long endTime = System.nanoTime();
 			durationunbuffered += endTime - startTime;
+			
+			//neu öffnen
+			try {
+				fis = new FileInputStream(source);
+			} catch (FileNotFoundException e) {
+				System.out.println("Quelldatei nicht gefunden");
+				return (Long) null;
+			}
+			try {
+				fos = new FileOutputStream(dest);
+			} catch (FileNotFoundException e) {
+				System.out.println("Fehlerhafte Zieldatei");
+				return (Long) null;
+			}
 			
 			startTime = System.nanoTime();
 			ZeitmessungStreams.bufferedCopyFile(fis, fos);
