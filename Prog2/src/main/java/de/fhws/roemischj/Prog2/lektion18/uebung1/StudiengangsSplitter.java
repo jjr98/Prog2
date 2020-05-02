@@ -12,13 +12,20 @@ public class StudiengangsSplitter {
 	
 	public static void splitStudiengaenge(String dateiname) {
 		try(BufferedReader br = new BufferedReader(new FileReader(dateiname));
-				FileWriter fwWInf = new FileWriter("WInfNr.txt");
-				FileWriter fwInf = new FileWriter("InfNr.txt");
-				FileWriter fwEC = new FileWriter("ECNr.txt")){
+				BufferedWriter fwWInf = new BufferedWriter(new FileWriter("WInfNr.txt"));
+				BufferedWriter fwInf = new BufferedWriter(new FileWriter("InfNr.txt"));
+				BufferedWriter fwEC = new BufferedWriter(new FileWriter("ECNr.txt"))){
 			while(true){
 				String line = br.readLine();
 				if(line == null) break;
-				int value = Integer.valueOf(line);
+				int value;
+				try
+				{
+					value = Integer.parseInt(line);
+				} catch(Exception e){
+					throw new MatrikelNummerException();
+				}
+				
 				if(value >= 5000000 && value <= 5099999)
 					fwWInf.write(line + "\n");
 				else if(value >= 5100000 && value <= 5199999)

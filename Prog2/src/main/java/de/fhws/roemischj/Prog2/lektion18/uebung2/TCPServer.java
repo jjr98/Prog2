@@ -21,6 +21,7 @@ public class TCPServer {
 				BufferedReader br = new BufferedReader(new InputStreamReader(is));
 				BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os)))
 		{
+			System.out.println("Server gestartet");
 			String[] words = { "Programmiersprache", "Informatik", "Java", "Klausur", "Basketball", "Bücher", "Musik", "Hackathon", "Surface",
 						"Technik", "Technology", "Hangman", "Aufgabe", "Methode", "String", "Character", "Datentyp", "Klassen",
 						"Diagramm" };
