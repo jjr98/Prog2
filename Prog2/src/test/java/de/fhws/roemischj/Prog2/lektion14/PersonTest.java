@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import de.fhws.roemischj.Prog2.lektion14.Person;
 
+@SuppressWarnings("unused")
 class PersonTest {
 
 	@Test

@@ -9,6 +9,7 @@ import de.fhws.roemischj.Prog2.lektion15.uebung1.Angestellter;
 
 import java.util.*;
 
+@SuppressWarnings("deprecation")
 class AngestellterTest {
 
 	@Test

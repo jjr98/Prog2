@@ -10,7 +10,7 @@ public class LaeuferImpl extends AbstractFigur implements Laeufer
   public Brett gibErlaubteFelder()
   {
     Brett brett = new Brett();
-    //TODO: Erg�nzen Sie den Algorithmus zur Bestimmung der Felder
+    // Erg�nzen Sie den Algorithmus zur Bestimmung der Felder
     int tempx, tempy;
     
     //nach links oben

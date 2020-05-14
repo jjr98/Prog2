@@ -7,13 +7,14 @@ import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 
+@SuppressWarnings("unused")
 class BrowserTest {
 
 	@Test
 	void testBack() {
 //		System.out.println("Normal back");
 		Browser browser = new Browser();
-		Optional<URL> back = browser.back();
+//		Optional<URL> back = browser.back();
 		String adresse = "";
 		
 //		back.ifPresent(url -> {browser.retrieveSite(url);} );

@@ -37,6 +37,7 @@ public class TCPClient {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+		s.close();
 	}
 
 	private static void printWord(String word) {

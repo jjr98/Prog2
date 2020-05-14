@@ -4,8 +4,6 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
-import javax.swing.text.DefaultEditorKit.BeepAction;
-
 public class Client {
 	static String msgToServer;
 	static boolean beenden;

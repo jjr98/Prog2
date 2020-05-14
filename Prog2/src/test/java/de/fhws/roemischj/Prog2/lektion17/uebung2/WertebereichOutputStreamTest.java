@@ -21,7 +21,8 @@ class WertebereichOutputStreamTest {
 			assertTrue(off <= input.getBytes().length);
 			assertTrue(off >= 0);
 			assertTrue(len + off <= input.getBytes().length);
-			os.write(b, off, len);			
+			os.write(b, off, len);
+			os.close();
 		} 
 		catch (IOException e) {
 			e.printStackTrace();

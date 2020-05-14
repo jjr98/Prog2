@@ -21,8 +21,9 @@ public class ZeitmessungStreams {
 			try {
 				FileInputStream test = new FileInputStream(source);
 				s.close();
+				test.close();
 				return source;
-			} catch (FileNotFoundException e) {
+			} catch (/*FileNotFoundException |*/ IOException e) {
 				System.out.println("Datei nicht gefunden.");
 				continue;
 			}
@@ -56,6 +57,7 @@ public class ZeitmessungStreams {
 		}
 	}
 	
+	@SuppressWarnings({ "null", "resource" })
 	public static float messeZeitDifferenz(int anzahlTests) {
 		long durationbuffered = 0;
 		long durationunbuffered = 0;
