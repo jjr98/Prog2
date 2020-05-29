@@ -10,19 +10,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PrimzahlServer {
+public class PrimzahlServer 
+{
 
-	public static void main(String[] args) {
-		class PrimzahlThread extends Thread{
+	public static void main(String[] args)
+	{
+		class PrimzahlThread extends Thread
+		{
 			List<Integer> zahlenZumTesten = new ArrayList<>();
 			Map<Integer, Boolean> ergebnis = new HashMap<>();
 			Socket connection;
 			
-			public PrimzahlThread(Socket connection) {
+			public PrimzahlThread(Socket connection) 
+			{
 				this.connection = connection;
 			}
 			
-			public boolean testeObPrimzahl(int zahl) {
+			public boolean testeObPrimzahl(int zahl) 
+			{
 				if (zahl < 2) return false;
 				for (int divisor = 2; divisor < zahl; divisor++)
 					if (zahl% divisor == 0) return false;
@@ -30,22 +35,27 @@ public class PrimzahlServer {
 			}
 			
 			@Override
-			public void run() {
+			public void run() 
+			{
 				try(ObjectInputStream ois = new ObjectInputStream(connection.getInputStream());
 						ObjectOutputStream oos = new ObjectOutputStream(connection.getOutputStream());)
 				{
+//					oos.flush();
 					ClientAnfrage ca = (ClientAnfrage) ois.readObject();
 					this.zahlenZumTesten = ca.zahlenZumTesten;
 					
-					for (Integer zahl : zahlenZumTesten) {
+					for (Integer zahl : zahlenZumTesten) 
+					{
 						ergebnis.put(zahl, testeObPrimzahl(zahl));
 					}
 					
 					oos.writeObject((new ServerAntwort(ergebnis)));
 					oos.flush();
-				} catch (IOException e) {
+				} catch (IOException e) 
+				{
 					e.printStackTrace();
-				} catch (ClassNotFoundException e) {
+				} catch (ClassNotFoundException e) 
+				{
 					e.printStackTrace();
 				}
 			}
@@ -53,24 +63,18 @@ public class PrimzahlServer {
 		
 		System.out.println("Starte Server...");
 
-		try(
-				ServerSocket ss = new ServerSocket(5000);
-				Socket connection = ss.accept();)
+		try(ServerSocket ss = new ServerSocket(8003);)
 		{
-			while(true) {
+			while(true)
+			{
+				Socket connection = ss.accept();
 				System.out.println("Server bereit");
-			
 			
 				Thread thread = new PrimzahlThread(connection);
 				thread.start();
-				
-				Thread.sleep(5000);
 			}
 		}catch(IOException e)
 		{
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
